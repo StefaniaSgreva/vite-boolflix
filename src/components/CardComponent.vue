@@ -1,12 +1,20 @@
 <template>
-    <div>
-        Card
+    <div class="items">
+        <ul>
+            <li>{{movie.title}}</li>
+            <li>{{movie.original_title}}</li>
+            <li>{{movie.original_language}}</li>
+            <li>{{movie.vote_average}}</li>
+        </ul>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'CardComponent'
+        name: 'CardComponent',
+        props:{
+            movie: Object
+        }
     }
 </script>
 

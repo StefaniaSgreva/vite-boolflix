@@ -1,6 +1,8 @@
 <template>
   <AppHeader/>
-  <ItemList/>
+  <main>
+    <ItemList/>
+  </main>
 </template>
 
 <script>
@@ -18,8 +20,7 @@ import {store} from './store';
     data(){
       return{
         store,
-        endPointMovie: 'movie?api_key=6e5beca259c47107979aef3b3305cc9a&language=en-US&page=1&query=a',
-        endPointTvSeries: 'tv?api_key=6e5beca259c47107979aef3b3305cc9a&language=en-US&page=1&query=a',
+     
       }
     }
 }

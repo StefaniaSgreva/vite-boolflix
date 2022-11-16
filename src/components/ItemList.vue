@@ -1,10 +1,6 @@
 <template>
      <div class="container">
-        <div class="row">
-            <div class="col" v-for="(item,index) in store.MovieList" :key="item.id">
-                <CardComponent :movie="item"/>
-            </div>
-        </div>
+        <CardComponent/>
      </div>
 </template>
 
@@ -18,10 +14,18 @@
             return{
                 store,
             }
-        }
+        },
+        created() {
+            store.getMovie();
+            store.getSeries();
+        },
     }
 </script>
 
 <style lang="scss" scoped>
-
+    .container{
+        width: 100%;
+        padding: 0 1rem;
+        
+    }
 </style>

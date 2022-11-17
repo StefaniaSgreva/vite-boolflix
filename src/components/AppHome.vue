@@ -22,8 +22,16 @@
                 </div>
             </div>
         </section>
-        <!-- ACTION MOVIES  -->
-
+        <!-- UPCOMING  -->
+        <section>
+            <h2>Prossime uscite</h2>
+            <div class="row_posters">
+                <div class="col" v-for="(item,index) in upcoming" :key="item.id">
+                   <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                   :alt="item.title">
+                </div>
+            </div>
+        </section>
 
     </div>
 </template>
@@ -34,7 +42,7 @@ import {store} from '../store';
 
     export default {
         name: 'AppHome',
-        props: ['tranding', 'toprated'],
+        props: ['tranding', 'toprated', 'upcoming'],
         data(){
             return{
                 store,

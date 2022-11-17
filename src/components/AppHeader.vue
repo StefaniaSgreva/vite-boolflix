@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>Boolfix</h1>
+        <img src="/images/logo.png" alt="Boolfix Logo">
         <AppSearch/>
     </header>
 </template>
@@ -21,16 +21,21 @@ import AppSearch from './AppSearch.vue';
 </script>
 
 <style lang="scss" scoped>
+@use '../assets/styles/partials/variables' as *;
     header{
         height: 90px;
         padding: 0 50px;
-        background-color: red;
+        background-color: $bg-color;
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: fixed;
         top: 0;
         width: 100%;
+
+        img{
+            width: 100px;
+        }
     }
     .visually-hidden{
         display: none;

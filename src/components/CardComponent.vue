@@ -43,7 +43,6 @@
 
 <style lang="scss" scoped>
     .flag{
-
         img{
             width: 20px;
         }

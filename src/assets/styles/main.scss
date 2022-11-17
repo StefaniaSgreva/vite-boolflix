@@ -14,10 +14,10 @@ $fa-font-path: './webfonts';
     box-sizing: border-box;
 }
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: $font-family;
     background-color: $bg-color;
     color: $text-color;
 }
 main{
-    padding-top: 100px;
+    padding: 100px 0;
   }

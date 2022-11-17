@@ -2,9 +2,9 @@
     <form @submit.prevent="performSearch">
      
         <label class="visually-hidden" for="searchName">Search item</label>
-        <input type="text" id="itemname" placeholder="Search name" v-model.trim="text">
+        <input type="text" id="itemname" placeholder="Cerca Titolo" v-model.trim="text">
 
-        <button type="submit">Search</button>
+        <button type="submit">Cerca</button>
         
     </form>
 </template>

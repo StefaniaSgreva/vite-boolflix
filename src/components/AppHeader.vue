@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header ref="headRef">
         <img src="/images/logo.png" alt="Boolfix Logo">
         <AppSearch/>
     </header>
@@ -16,7 +16,33 @@ import AppSearch from './AppSearch.vue';
             store,
         };
     },
-    components: { AppSearch }
+    components: { AppSearch },
+    methods: {
+      vueOnScroll() {
+        var prev = window.pageYOffset;
+        const refs = this.$refs.headRef; // assign the reference in variable
+        window.addEventListener("scroll", () => {
+          var curr = window.pageYOffset;
+          if (prev > curr) {
+            refs.classList.add("scrollDown");
+            refs.classList.remove("scrolled");
+          } else {
+            refs.classList.add("scrollDown");
+            refs.classList.remove("scrolled");
+          }
+          if (curr === 0) {
+            refs.classList.remove("scrollDown");
+            refs.classList.remove("scrolled");
+          }
+            prev = curr;
+        });
+      },
+    },
+    mounted() {
+      // run the function when the component's mount
+      this.vueOnScroll();
+    }
+   
 }
 </script>
 
@@ -25,17 +51,29 @@ import AppSearch from './AppSearch.vue';
     header{
         height: 90px;
         padding: 0 50px;
-        background-color: $bg-color;
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: fixed;
         top: 0;
         width: 100%;
+        z-index: 1000;
+        transition-timing-function: ease-in;
+        transition: all 0.5s;
+        background: linear-gradient(to bottom, black, transparent);
+
+
 
         img{
             width: 100px;
         }
+    }
+    .srolled{
+        background: linear-gradient(to bottom, black, transparent);
+
+    }
+    .scrollDown{
+        background-color: $bg-color;
     }
     .visually-hidden{
         display: none;

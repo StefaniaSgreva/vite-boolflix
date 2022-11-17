@@ -9,6 +9,7 @@
         <div>{{item.title || item.name}}</div>
         <div>
             <!-- <span v-for="n in 5" class="fa-star" :class="(n <= star) ? 'fa-solid' : 'fa-regular'"></span> -->
+            <span v-for="n in 5" class="fa-solid fa-star"></span>
 
             {{item.vote_average}}
         </div>
@@ -37,9 +38,9 @@ import { store } from "../store";
             };
         },
         computed: {
-            star(){
-                return 
-            }
+            // star(){
+            //     return 
+            // }
         },
     }
 </script>

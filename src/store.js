@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 import { reactive } from "vue";
 
 export const store = reactive({
@@ -15,10 +15,9 @@ export const store = reactive({
         api_key: '6e5beca259c47107979aef3b3305cc9a',
         query: '',
         language: 'it-IT',
-        include_adult: false,
+        // include_adult: false,
     },
 
     Movie: [],
     Series: [],
-
 });

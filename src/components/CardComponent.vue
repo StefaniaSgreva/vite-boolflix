@@ -1,7 +1,7 @@
 <template>
     <div class="media">
 
-        <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x500'" 
+        <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
         :alt="item.title || item.name">
         <!-- <h4>{{item.original_title ? item.original_title : item.original_name}}</h4> -->
         <h4>{{item.original_title || item.original_name}}</h4>

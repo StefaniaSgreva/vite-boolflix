@@ -2,7 +2,7 @@
   <AppHeader/>
   <main>
     <div v-if="store.params.query <= 0">
-      <AppHome/>
+      <AppHome :tranding=" trandingList"/>
     </div>
     <div v-else>
       <ItemList title="Movies" :items="store.Movie"/>
@@ -27,6 +27,8 @@ import {store} from './store';
       data(){
         return{ 
           store,
+          trandingNow: 'https://api.themoviedb.org/3/movie/5/recommendations?api_key=6e5beca259c47107979aef3b3305cc9a&language=it-IT&page=1',
+          trandingList: [],
       }
     },
     watch:{
@@ -54,10 +56,17 @@ import {store} from './store';
             
             store.Series = res.data.results;
         })
+      },
+      getTranding(){
+        axios.get(this.trandingNow).then((res) => {
+            // console.log(res.data.results);
+            this.trandingList = [...res.data.results];
+            // console.log(this.trandingList);
+        })
       }
     },
     created(){
-      
+      this.getTranding();
         
     }
 }

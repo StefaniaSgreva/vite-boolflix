@@ -3,6 +3,9 @@
         <img src="/images/logo.png" alt="Boolfix Logo">
         <AppSearch/>
     </header>
+    <div class="hero">
+        
+    </div>
 </template>
 
 <script>
@@ -48,6 +51,16 @@ import AppSearch from './AppSearch.vue';
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
+
+    .hero{
+        height: 900px;
+        width: 100%;
+        background-image: url(/images/tonkohouse_oni_01.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
     header{
         height: 90px;
         padding: 0 50px;
@@ -62,15 +75,12 @@ import AppSearch from './AppSearch.vue';
         transition: all 0.5s;
         background: linear-gradient(to bottom, black, transparent);
 
-
-
         img{
             width: 100px;
         }
     }
     .srolled{
         background: linear-gradient(to bottom, black, transparent);
-
     }
     .scrollDown{
         background-color: $bg-color;

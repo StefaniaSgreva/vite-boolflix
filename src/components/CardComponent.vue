@@ -8,10 +8,8 @@
 
         <div>{{item.title || item.name}}</div>
         <div>
-            <!-- <span v-for="n in 5" class="fa-star" :class="(n <= star) ? 'fa-solid' : 'fa-regular'"></span> -->
-            <span v-for="n in 5" class="fa-solid fa-star"></span>
-
-            {{item.vote_average}}
+            <span v-for="n in 5" class="fa-star" :class="(n <= stars) ? 'fa-solid' : 'fa-regular'"></span>
+            <!-- {{item.vote_average}} -->
         </div>
         <div class="flag" v-if="availableFlag.includes(item.original_language)">
             <img :src="'/images/' + item.original_language +'.png'" :alt="item.original_language + 'Flag'">
@@ -38,9 +36,9 @@ import { store } from "../store";
             };
         },
         computed: {
-            // star(){
-            //     return 
-            // }
+            stars(){
+                return Math.ceil(this.item.vote_average / 2);
+            }
         },
     }
 </script>

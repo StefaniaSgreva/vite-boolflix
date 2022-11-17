@@ -2,7 +2,7 @@
   <AppHeader/>
   <main>
     <div v-if="store.params.query <= 0">
-      <AppHome :tranding=" trandingList"/>
+      <AppHome :tranding=" trandingList" :toprated="topRatedList"/>
     </div>
     <div v-else>
       <ItemList title="Movies" :items="store.Movie"/>
@@ -28,7 +28,9 @@ import {store} from './store';
         return{ 
           store,
           trandingNow: 'https://api.themoviedb.org/3/movie/5/recommendations?api_key=6e5beca259c47107979aef3b3305cc9a&language=it-IT&page=1',
+          topRated: 'https://api.themoviedb.org/3/movie/top_rated?api_key=6e5beca259c47107979aef3b3305cc9a&language=it-IT&page=1',
           trandingList: [],
+          topRatedList: [],
       }
     },
     watch:{
@@ -63,10 +65,18 @@ import {store} from './store';
             this.trandingList = [...res.data.results];
             // console.log(this.trandingList);
         })
+      },
+      getTopRated(){
+        axios.get(this.topRated).then((res) => {
+            // console.log(res.data.results);
+            this.topRatedList = [...res.data.results];
+            // console.log(this.trandingList);
+        })
       }
     },
     created(){
       this.getTranding();
+      this.getTopRated();
         
     }
 }

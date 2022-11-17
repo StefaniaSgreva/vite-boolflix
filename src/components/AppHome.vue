@@ -1,18 +1,29 @@
 <template>
     <div>
         <!-- BOOLFIX ORIGINALS -->
-     
-
+    
         <!-- TRANDING NOW  -->
         <section>
-            <h2>Tranding Now</h2>
-            <div class="row">
+            <h2>I titoli del momento</h2>
+            <div class="row_posters">
                 <div class="col" v-for="(item,index) in tranding" :key="item.id">
-                   <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" :alt="item.title">
-                   <!-- <div>{{item.title}}</div> -->
+                   <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                   :alt="item.title">
                 </div>
             </div>
         </section>
+        <!-- TOP RATED -->
+        <section>
+            <h2>I pi&ugrave; cercati</h2>
+            <div class="row_posters">
+                <div class="col" v-for="(item,index) in toprated" :key="item.id">
+                   <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                   :alt="item.title">
+                </div>
+            </div>
+        </section>
+        <!-- ACTION MOVIES  -->
+
 
     </div>
 </template>
@@ -23,7 +34,7 @@ import {store} from '../store';
 
     export default {
         name: 'AppHome',
-        props: ['tranding'],
+        props: ['tranding', 'toprated'],
         data(){
             return{
                 store,
@@ -40,7 +51,7 @@ import {store} from '../store';
         margin-left: 3rem;
         margin-top: 3rem;
 
-        .row{
+        .row_posters{
             display: flex;
             justify-content: flex-start;
             align-items: center;

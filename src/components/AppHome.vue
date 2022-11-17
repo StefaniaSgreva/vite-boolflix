@@ -52,6 +52,10 @@ import {store} from '../store';
                 height: 240px;
                 margin: 1rem 0;
                 margin-left: 8px;
+
+                img{
+                    height: 100%;
+                }
             }
         }
     }

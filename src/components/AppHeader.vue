@@ -3,7 +3,7 @@
         <img src="/images/logo.png" alt="Boolfix Logo">
         <AppSearch/>
     </header>
-    <div class="hero">
+    <div class="hero" v-if="store.params.query <= 0">
         
     </div>
 </template>

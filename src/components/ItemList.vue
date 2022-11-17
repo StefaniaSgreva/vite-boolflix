@@ -35,7 +35,7 @@
     section{
         overflow: hidden;
         margin-left: 3rem;
-        margin-top: 3rem;
+        margin-top: 5rem;
 
         .row{
             display: flex;

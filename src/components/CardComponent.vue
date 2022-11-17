@@ -1,68 +1,54 @@
 <template>
-    <section id="movie">
-        <div class="items">
-            <div class="card" v-for="(movie,index) in store.MovieList" :key="movie.id">
-                <!-- <img :src="" :alt="movie.title"> -->
-                <div class="info">
-                    <h2>{{movie.title}}</h2>
-                    <span>{{movie.original_title}}</span>
-                    <span>{{movie.original_language}}</span>
-                    <span>{{movie.vote_average}}</span>
-                </div>
-            </div>
+    <div class="media">
+
+        <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x500'" 
+        :alt="item.title || item.name">
+        <!-- <h4>{{item.original_title ? item.original_title : item.original_name}}</h4> -->
+        <h4>{{item.original_title || item.original_name}}</h4>
+
+        <div>{{item.title || item.name}}</div>
+        <div>
+            <!-- <span v-for="n in 5" class="fa-star" :class="(n <= star) ? 'fa-solid' : 'fa-regular'"></span> -->
+
+            {{item.vote_average}}
         </div>
-    </section>
-    <section id="series">
-        <div class="items">
-            <div class="card" v-for="(series,index) in store.TvList" :key="series.id">
-                <!-- <img :src="" :alt="series.name"> -->
-                <div class="info">
-                    <h2>{{series.name}}</h2>
-                    <span>{{series.original_name}}</span>
-                    <span>{{series.original_language}}</span>
-                    <span>{{series.vote_average}}</span>
-                </div>
-            </div>
+        <div class="flag" v-if="availableFlag.includes(item.original_language)">
+            <img :src="'/images/' + item.original_language +'.png'" :alt="item.original_language + 'Flag'">
         </div>
-    </section>
+        <div v-else>{{item.original_language}}</div>
+    </div>
 </template>
 
 <script>
+   
 import { store } from "../store";
 
     export default {
         name: 'CardComponent',
+        props: {
+            item: Object
+        },
         data() {
             return {
-            store,
+                availableFlag: [
+                    'de', 'fr', 'it', 'es'
+                ],
+                imgBasePath: 'https://image.tmdb.org/t/p/w154'
             };
         },
-        methods: {
-   
+        computed: {
+            star(){
+                return 
+            }
         },
     }
 </script>
 
 <style lang="scss" scoped>
-    
-    section{
-       margin-bottom: 3rem;
-    }
-    .items{
-       display: flex;
-       justify-content: flex-start;
-       align-items: center;
-       overflow-x: auto;
-       .card{
-        margin: 1rem;
-        background-color: gray;
-       
-            .info{
-                width: 300px;
-            }
-            span{
-                display: block;
-            }
-       }
+    .flag{
+
+        img{
+            width: 50px;
+        }
     }
 </style>

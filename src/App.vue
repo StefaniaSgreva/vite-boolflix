@@ -1,34 +1,64 @@
 <template>
-  <AppHeader />
+  <AppHeader/>
   <main>
-      <ItemList/>
+    <div v-if="store.params.query <= 0">
+      <AppHome/>
+    </div>
+    <div v-else>
+      <ItemList title="Movies" :items="store.Movie"/>
+      <ItemList title="Tv Series" :items="store.Series"/>
+    </div>
   </main>
 </template>
 
 <script>
-// import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import ItemList from './components/ItemList.vue';
-
-// import {store} from './store';
+import AppHome from './components/AppHome.vue';
+import axios from 'axios';
+import {store} from './store';
 
   export default {
-    components: {
-    AppHeader,
-    ItemList
-},
-    // data(){
-    //   return{
-    //     store,
-    //     endPointMovie: 'movie?api_key=6e5beca259c47107979aef3b3305cc9a&language=en-US&page=1&query=a',
-    //     endPointTv: 'tv?api_key=6e5beca259c47107979aef3b3305cc9a&language=en-US&page=1&query=a',
-    //   }
-    //},
-    methods:{
-
+      components: {
+      AppHeader,
+      ItemList,
+      AppHome
     },
-   created(){
-       
+      data(){
+        return{ 
+          store,
+      }
+    },
+    watch:{
+      'store.params.query'(newVal, oldVal){
+        if(newVal !== oldVal){
+          this.getMovie();
+          this.getSeries();
+
+        }
+      }
+    },
+    methods:{
+      getMovie(){
+        const apiURL = store.baseURL + store.endPoint.movie;
+        const params = store.params
+        axios.get(apiURL,{params}).then((res) => {
+            console.log(res.data.results);
+            store.Movie = res.data.results;
+        })
+      },
+      getSeries(){
+        const apiURL = store.baseURL + store.endPoint.tv;
+        const params = store.params
+        axios.get(apiURL,{params}).then((res) => {
+            
+            store.Series = res.data.results;
+        })
+      }
+    },
+    created(){
+      
+        
     }
 }
 </script>

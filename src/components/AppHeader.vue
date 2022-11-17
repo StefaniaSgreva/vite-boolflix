@@ -1,26 +1,22 @@
 <template>
     <header>
         <h1>Boolfix</h1>
-        <div class="search">
-            <label class="visually-hidden" for="searchName">Search item</label>
-            <input type="text" id="itemname" placeholder="Search name" v-model.trim="store.search">
-            <button type="button" @click="store.getMovie(); store.getSeries();">Search</button>
-        </div>
+        <AppSearch/>
     </header>
 </template>
 
 <script>
 import {store} from '../store';
+import AppSearch from './AppSearch.vue';
     
     export default {
     name: "AppHeader",
-    data(){
-        return{
+    data() {
+        return {
             store,
-            
-        }
+        };
     },
- 
+    components: { AppSearch }
 }
 </script>
 

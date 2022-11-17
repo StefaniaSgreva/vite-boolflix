@@ -20,8 +20,6 @@
 
 <script>
    
-import { store } from "../store";
-
     export default {
         name: 'CardComponent',
         props: {
@@ -30,7 +28,7 @@ import { store } from "../store";
         data() {
             return {
                 availableFlag: [
-                    'de', 'fr', 'it', 'es'
+                    'de', 'es', 'en','fr', 'it'
                 ],
                 imgBasePath: 'https://image.tmdb.org/t/p/w154'
             };
@@ -47,7 +45,7 @@ import { store } from "../store";
     .flag{
 
         img{
-            width: 50px;
+            width: 20px;
         }
     }
 </style>

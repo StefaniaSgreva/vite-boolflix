@@ -125,7 +125,7 @@ import AppSearch from './AppSearch.vue';
     header{
         height: 90px;
         padding: 0 50px;
-        padding-left: 120px;
+        padding-left: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -141,7 +141,7 @@ import AppSearch from './AppSearch.vue';
             width: 100px;
         }
     }
-    .srolled{
+    .scrolled{
         background: linear-gradient(to bottom, black, transparent);
     }
     .scrollDown{

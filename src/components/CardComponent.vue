@@ -7,7 +7,7 @@
         <div class="infos">
             <h4>{{item.original_title || item.original_name}}</h4>
 
-            <div>{{item.title || item.name}}</div>
+            <div class="title">{{item.title || item.name}}</div>
             <div>
                 <span v-for="n in 5" class="fa-star" :class="(n <= stars) ? 'fa-solid' : 'fa-regular'"></span>
                 <!-- {{item.vote_average}} -->
@@ -47,7 +47,6 @@
 @use '../assets/styles/partials/variables' as *;
 
     img{
-        // height: 250px;
         height: 100%;
         border-radius: 5px;       
     }
@@ -61,11 +60,24 @@
         width: 100%;
         padding: 1rem;
         transition: opacity 450ms;
-    }
-    .flag{
+
+        h4{
+            font-size: 1.1rem;
+        }
+        .title{
+            font-size: .75rem;
+            padding: .5rem 0;
+        }
+        .fa-solid{
+            color: goldenrod;
+        }
+        .flag{
+            padding-top: .5rem;
         img{
             width: 20px;
         }
     }
+    }
+    
     
 </style>

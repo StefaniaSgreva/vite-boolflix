@@ -43,7 +43,7 @@
     }
     section{
         // margin-left: 3rem;
-        margin-top: 5rem;
+        margin-top: 4rem;
         h2{
             margin-left: 30px;
         }

@@ -15,13 +15,16 @@ import {store} from '../store';
         name: 'AppSearch',
         data(){
             return{
-                text: ''
+                text: '',
+                store
             }
         },
         methods:{
             performSearch(){
                 console.log(this.text);
-                store.params.query = this.text
+                store.params.query = this.text;
+                store.getMovie();
+                store.getSeries();
             }
         }
     }

@@ -1,12 +1,4 @@
 <template>
-    <!-- <form @submit.prevent="performSearch">
-     
-        <label class="visually-hidden" for="searchName">Search item</label>
-        <input type="text" id="itemname" placeholder="Cerca Titolo" v-model.trim="text">
-
-        <button type="submit">Cerca</button>
-        
-    </form> -->
     <div class="box">
         <input type="checkbox" id="check">
         <div class="search-box">
@@ -47,7 +39,7 @@ import {store} from '../store';
     .visually-hidden{
         display: none;
     }
-    
+
     .box{
         max-width: 400px;
         width: 100%;
@@ -66,7 +58,7 @@ import {store} from '../store';
 
     }
     .search-box input{
-       display: none;
+        display: none;
     }
     .search-box i{
         position: absolute;
@@ -89,12 +81,14 @@ import {store} from '../store';
         padding-left: 50px;
         font-size: 1rem;
         color: $text-color;
+        font-family: inherit;
+        font-size: inherit;
     } 
     #check{
         display: none;
     }
-   
-   button{
+
+    button{
     position: absolute;
     right: -50px;
     bottom: 0;
@@ -103,10 +97,6 @@ import {store} from '../store';
     font-weight: 600;
     border: none;
     border-radius: 5px;
-   }
-
-   .search-box input:focus{
-        background-color: black;
-   }
-
+    }
+ 
 </style>

@@ -4,7 +4,19 @@
         <AppSearch/>
     </header>
     <div class="hero" v-if="store.params.query <= 0">
-        
+        <div class="hero-contents">
+          <div class="movie-logo">
+            <img src="/images/Oni_logo.png" alt="Oni Logo">
+          </div>
+          <h2>La leggenda del dio del tuono</h2>
+          <p class="hero-description">
+            Una nuova serie animata prodotta in collaborazione con studio Tonko House ispirata alle divinità e alla mitologia giapponese.
+          </p>
+          <div hero-button>
+            <button class="hero-btn"><i class="fa-solid fa-play"></i> Riproduci</button>
+            <button class="hero-btn btn-gray"><i class="fa-solid fa-circle-info"></i> Altre info</button>
+          </div>
+        </div>
     </div>
 </template>
 
@@ -58,12 +70,62 @@ import AppSearch from './AppSearch.vue';
         background-image: linear-gradient(transparent, $bg-color 100%), url(/images/tonkohouse_oni_01.jpg);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
-    }
+        background-position: center center;
+        position: relative;
+        z-index: -1;
+        .hero-contents{
+          position: absolute;
+          bottom: 280px;
+          left: 50px; 
+        }
+        .movie-logo{
+          width: 300px;
+            img{
+              width: 100%;
+            }
+        }
+        h2{
+          font-size: 1.8rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          margin-top: -50px;
+          margin-bottom: 1.5rem;
+        }
+
+        p{
+          width: 600px;
+          font-size: 1.4rem;
+          line-height: 1.5;
+          margin-bottom: 2rem;
+        }
+        .hero-btn{
+            padding: 12px 30px;
+            font-size: 1.5rem;
+            font-family: inherit;
+            font-weight: 500;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            margin-right: .75rem;
+
+              i{
+                font-size: 1.8rem;
+                margin-right: .75rem;
+                vertical-align: middle;
+              }
+        }
+        .btn-gray{
+          background-color: $btn-gray;
+          opacity: .9;
+          color: $text-color;
+        }
+
+  }
 
     header{
         height: 90px;
         padding: 0 50px;
+        padding-left: 120px;
         display: flex;
         justify-content: space-between;
         align-items: center;

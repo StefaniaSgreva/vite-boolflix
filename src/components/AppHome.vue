@@ -62,7 +62,7 @@ import {store} from '../store';
     margin-top: -12rem;
 }
 section{
-        overflow: hidden;
+        // overflow: hidden;
         margin-left: 3rem;
         margin-top: 5rem;
 

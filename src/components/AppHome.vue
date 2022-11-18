@@ -58,6 +58,9 @@ import {store} from '../store';
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
+.container{
+    margin-top: -12rem;
+}
 section{
         overflow: hidden;
         margin-left: 3rem;

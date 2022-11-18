@@ -1,5 +1,22 @@
 <template>
+  
     <div class="container">
+        <!-- <div class="media-scroller">
+            <div class="media-group">
+                <h2>I titoli del momento</h2>
+                <div class="media-element" v-for="(item,index) in tranding" :key="item.id">
+                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                    :alt="item.title">
+                </div>
+            </div>
+
+            <div class="media-group">
+                <div class="media-element" v-for="(item,index) in tranding" :key="item.id">
+                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                    :alt="item.title">
+                </div>
+            </div>
+        </div>  -->
         <!-- TRANDING NOW  -->
         <section>
             <h2>I titoli del momento</h2>
@@ -10,7 +27,7 @@
                 </div>
             </div>
 
-        </section>
+        </section> 
         <!-- TOP RATED -->
         <section>
             <h2>I pi&ugrave; cercati</h2>
@@ -19,10 +36,10 @@
                     <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
                     :alt="item.title" >
                 </div>
-            </div>
-        </section>
+            </div> 
+        </section> 
         <!-- UPCOMING  -->
-        <section>
+         <section>
             <h2>Prossime uscite</h2>
             <div class="row">
                 <div class="col" v-for="(item,index) in upcoming" :key="item.id">
@@ -30,7 +47,7 @@
                     :alt="item.title">
                 </div>
             </div>
-        </section>
+        </section> 
     </div>
    
 </template>
@@ -58,6 +75,8 @@ import {store} from '../store';
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/variables' as *;
+
+
 .container{
     margin-top: -12rem;
 

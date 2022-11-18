@@ -52,6 +52,8 @@
             padding: 65px 0;
             margin-right: 20px;
             padding-left: 25px;
+            padding-right: 35px;
+
            
             .col{
                 // border: 1px solid red;

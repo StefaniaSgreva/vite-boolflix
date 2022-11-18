@@ -66,6 +66,10 @@ section{
         margin-left: 3rem;
         margin-top: 5rem;
 
+        h2{
+            margin-left: 18px;
+        }
+
         .row{
             display: flex;
             justify-content: flex-start;

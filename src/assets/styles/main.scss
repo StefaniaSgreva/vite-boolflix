@@ -27,3 +27,34 @@ body{
 main{
     margin-bottom: 100px;
 }
+.row{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+}
+.row::-webkit-scrollbar{
+    height: .55em;
+    background: $btn-gray;
+    border-radius: 25vw;
+}
+.row::-webkit-scrollbar-thumb{
+    background: $boolfix-red;
+    border-radius: 25vw;
+}
+.row::-webkit-scrollbar-thumb:hover{
+        background: $boolfix-dark-red;
+}
+.col{
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 450ms;
+    img{
+        height: 100%;
+        border-radius: 5px;
+    }
+}
+.col:hover{
+    transform: scale(1.08);
+}

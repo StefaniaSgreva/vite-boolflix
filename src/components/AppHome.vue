@@ -60,59 +60,27 @@ import {store} from '../store';
 @use '../assets/styles/partials/variables' as *;
 .container{
     margin-top: -12rem;
-}
-section{
-        // overflow: hidden;
+
+    section{
         margin-left: 3rem;
-        margin-top: 5rem;
+        margin-top: 4rem;
 
         h2{
             margin-left: 18px;
         }
 
         .row{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-wrap: nowrap;
-            overflow-x: scroll;
             overflow-y: hidden;
             margin-right: 20px;
            
             .col{
                 // border: 1px solid red;
                 height: 250px;
-                margin: 1.5rem 0;
+                margin: 1.5rem 0;        
                 margin-left: 10px;
-                cursor: pointer;
-                transition: transform 450ms;
-
-                img{
-                    height: 100%;
-                    border-radius: 5px;
-                   
-                }
-            }
-            .col:hover{
-                transform: scale(1.08);
             }
         }
-       .row::-webkit-scrollbar{
-        height: .55em;
-        background: $btn-gray;
-        border-radius: 25vw;
-       }
-       .row::-webkit-scrollbar-thumb{
-            background: $boolfix-red;
-            border-radius: 25vw;
-        }
-        .row::-webkit-scrollbar-thumb:hover{
-             background: $boolfix-dark-red;
-        }
+    }
 }
-        
-        // .row_posters::-webkit-scrollbar{
-        //     display: none;
-        // }
-   
+ 
 </style>

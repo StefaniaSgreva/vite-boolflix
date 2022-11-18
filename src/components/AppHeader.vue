@@ -1,6 +1,8 @@
 <template>
     <header ref="headRef">
+      <a href="/index.html">
         <img src="/images/logo.png" alt="Boolfix Logo">
+      </a>
         <AppSearch/>
     </header>
     <div class="hero" v-if="store.params.query <= 0">
@@ -139,6 +141,7 @@ import AppSearch from './AppSearch.vue';
 
         img{
             width: 100px;
+            cursor: pointer;
         }
     }
     .scrolled{

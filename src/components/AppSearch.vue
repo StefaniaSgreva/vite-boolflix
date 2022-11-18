@@ -43,6 +43,7 @@ import {store} from '../store';
     .box{
         max-width: 400px;
         width: 100%;
+        
     }
 
     .box .search-box{
@@ -52,6 +53,7 @@ import {store} from '../store';
         // background: red;
         margin: auto;
         transition: all 0.3s ease;
+        
     }
     #check:checked ~ .search-box{
         max-width: 380px;
@@ -69,6 +71,7 @@ import {store} from '../store';
         text-align: center;
         line-height: 50px;
         font-size: 1.5rem;
+        cursor: pointer;
     }
     #check:checked ~ .search-box input{
         display: block;
@@ -97,6 +100,12 @@ import {store} from '../store';
     font-weight: 600;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    transition:  background-color 1s;
+    }
+    button:hover{
+        background-color: $boolfix-red;
+        color: $text-color;
     }
  
 </style>

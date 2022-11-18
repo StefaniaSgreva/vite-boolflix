@@ -122,6 +122,9 @@ import AppSearch from './AppSearch.vue';
           color: $text-color;
         }
 
+        // .btn-gray:hover{
+        //   background-color: red;
+        // }
   }
 
     header{

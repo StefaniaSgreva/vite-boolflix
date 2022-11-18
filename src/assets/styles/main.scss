@@ -49,12 +49,9 @@ main{
 .col{
     margin-left: 10px;
     cursor: pointer;
-    transition: transform 450ms;
+    // transition: transform 450ms;
     img{
         height: 100%;
         border-radius: 5px;
     }
-}
-.col:hover{
-    transform: scale(1.08);
 }

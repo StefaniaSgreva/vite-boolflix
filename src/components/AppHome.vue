@@ -78,6 +78,11 @@ import {store} from '../store';
                 height: 250px;
                 margin: 1.5rem 0;        
                 margin-left: 10px;
+                transition: transform 450ms;
+
+            }
+            .col:hover{
+                transform: scale(1.08);
             }
         }
     }

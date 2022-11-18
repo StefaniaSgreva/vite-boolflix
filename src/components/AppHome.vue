@@ -108,7 +108,6 @@ section{
         }
         .row::-webkit-scrollbar-thumb:hover{
              background: $boolfix-dark-red;
-     
         }
 }
         

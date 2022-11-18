@@ -1,36 +1,36 @@
 <template>
-   
-    <!-- TRANDING NOW  -->
-    <section>
-        <h2>I titoli del momento</h2>
-        <div class="row_posters">
-            <div class="row_poster" v-for="(item,index) in tranding" :key="item.id">
-                <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
-                :alt="item.title">
+    <div class="container">
+        <!-- TRANDING NOW  -->
+        <section>
+            <h2>I titoli del momento</h2>
+            <div class="row_posters">
+                <div class="row_poster" v-for="(item,index) in tranding" :key="item.id">
+                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                    :alt="item.title">
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- TOP RATED -->
-    <section>
-        <h2>I pi&ugrave; cercati</h2>
-        <div class="row_posters">
-            <div class="row_poster" v-for="(item,index) in toprated" :key="item.id">
-                <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
-                :alt="item.title" >
+        </section>
+        <!-- TOP RATED -->
+        <section>
+            <h2>I pi&ugrave; cercati</h2>
+            <div class="row_posters">
+                <div class="row_poster" v-for="(item,index) in toprated" :key="item.id">
+                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                    :alt="item.title" >
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- UPCOMING  -->
-    <section>
-        <h2>Prossime uscite</h2>
-        <div class="row_posters">
-            <div class="row_poster" v-for="(item,index) in upcoming" :key="item.id">
-                <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
-                :alt="item.title">
+        </section>
+        <!-- UPCOMING  -->
+        <section>
+            <h2>Prossime uscite</h2>
+            <div class="row_posters">
+                <div class="row_poster" v-for="(item,index) in upcoming" :key="item.id">
+                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                    :alt="item.title">
+                </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    </div>
    
 </template>
 
@@ -48,11 +48,19 @@ import {store} from '../store';
                 imgBig: 'https://image.tmdb.org/t/p/original',
             }
         },
-        
+        created(){
+            store.getTranding();
+            store.getTopRated();
+            store.getUpcoming(); 
+        }
     }
 </script>
 
 <style lang="scss" scoped>
+
+.container{
+    margin-top: -220px;
+}
         .row_poster{
             width: 100%;
             object-fit: contain;

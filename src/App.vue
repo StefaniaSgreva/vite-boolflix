@@ -43,9 +43,7 @@ import {store} from './store';
 
   }, 
     created(){
-      store.getTranding();
-      store.getTopRated();
-      store.getUpcoming();  
+     
     }
 }
 </script>

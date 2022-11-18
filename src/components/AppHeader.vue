@@ -55,7 +55,7 @@ import AppSearch from './AppSearch.vue';
     .hero{
         height: 900px;
         width: 100%;
-        background-image: url(/images/tonkohouse_oni_01.jpg);
+        background-image: linear-gradient(transparent, $bg-color 100%), url(/images/tonkohouse_oni_01.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;

@@ -119,7 +119,7 @@ import {store} from '../store';
 .container{
     // margin-top: -12rem;
     section:first-of-type{
-        margin-top: -10rem;
+        margin-top: -8rem;
     }
     section{
         margin-top: 3rem;

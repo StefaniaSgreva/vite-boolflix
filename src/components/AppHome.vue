@@ -1,53 +1,59 @@
 <template>
-  
+     <!-- <div class="cards-container">
+        <button class="handle left-handle" @click="scrollLeft()"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider" ref="scrollRef">
+            <div class="images" v-for="(item,index) in tranding" :key="item.id">
+                <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                :alt="item.title">
+            </div>
+        </div>
+        <button class="handle right-handle" @click="scrollRight()"><i class="fa-solid fa-chevron-right"></i></button>
+    </div> -->
+    
     <div class="container">
-        <!-- <div class="media-scroller">
-            <div class="media-group">
-                <h2>I titoli del momento</h2>
-                <div class="media-element" v-for="(item,index) in tranding" :key="item.id">
-                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
-                    :alt="item.title">
-                </div>
-            </div>
-
-            <div class="media-group">
-                <div class="media-element" v-for="(item,index) in tranding" :key="item.id">
-                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
-                    :alt="item.title">
-                </div>
-            </div>
-        </div>  -->
+       
         <!-- TRANDING NOW  -->
         <section>
             <h2>I titoli del momento</h2>
-            <div class="row">
-                <div class="col" v-for="(item,index) in tranding" :key="item.id">
-                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
-                    :alt="item.title">
+            <div class="cards-container">
+                <button class="handle left-handle" @click="scrollLeft()"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" ref="scrollRef">
+                     <div class="images" v-for="(item,index) in tranding" :key="item.id">
+                        <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                        :alt="item.title">
+                    </div>
                 </div>
+                <button class="handle right-handle" @click="scrollRight()"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
-
         </section> 
         <!-- TOP RATED -->
         <section>
             <h2>I pi&ugrave; cercati</h2>
-            <div class="row">
-                <div class="col" v-for="(item,index) in toprated" :key="item.id">
-                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
-                    :alt="item.title" >
+            <div class="cards-container">
+                <button class="handle left-handle" @click="scrollLeft2()"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" ref="scrollRef2">
+                     <div class="images" v-for="(item,index) in toprated" :key="item.id">
+                        <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                        :alt="item.title">
+                    </div>
                 </div>
-            </div> 
-        </section> 
-        <!-- UPCOMING  -->
-         <section>
-            <h2>Prossime uscite</h2>
-            <div class="row">
-                <div class="col" v-for="(item,index) in upcoming" :key="item.id">
-                    <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
-                    :alt="item.title">
-                </div>
+                <button class="handle right-handle" @click="scrollRight2()"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
-        </section> 
+        </section>
+        <!-- UPCOMING  -->
+        <section>
+            <h2>Prossime uscite</h2>
+            <div class="cards-container">
+                <button class="handle left-handle" @click="scrollLeft3()"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="slider" ref="scrollRef3">
+                     <div class="images" v-for="(item,index) in upcoming" :key="item.id">
+                        <img :src="item.poster_path ? imgBasePath+item.poster_path : 'https://via.placeholder.com/154x240'" 
+                        :alt="item.title">
+                    </div>
+                </div>
+                <button class="handle right-handle" @click="scrollRight3()"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
     </div>
    
 </template>
@@ -62,7 +68,40 @@ import {store} from '../store';
         data(){
             return{
                 store,
-                imgBasePath: 'https://image.tmdb.org/t/p/w154',
+                imgBasePath: 'https://image.tmdb.org/t/p/w342',
+            }
+        },
+        methods:{
+            scrollLeft() {
+                const e = this.$refs.scrollRef;
+                // console.log(e);
+                e.scrollBy({left: -1000, behavior: "smooth",});
+            },
+            scrollRight() {
+                const e = this.$refs.scrollRef;
+                // console.log(e);
+                e.scrollBy({left: 1000, behavior: "smooth",});
+            },
+            //! FIND A BETTER SOLUTIONS
+            scrollLeft2() {
+                const e2 = this.$refs.scrollRef2;
+                // console.log(e);
+                e2.scrollBy({left: -1000, behavior: "smooth",});
+            },
+            scrollRight2() {
+                const e2 = this.$refs.scrollRef2;
+                // console.log(e);
+                e2.scrollBy({left: 1000, behavior: "smooth",});
+            },
+            scrollLeft3() {
+                const e3 = this.$refs.scrollRef3;
+                // console.log(e);
+                e3.scrollBy({left: -1000, behavior: "smooth",});
+            },
+            scrollRight3() {
+                const e3 = this.$refs.scrollRef3;
+                // console.log(e);
+                e3.scrollBy({left: 1000, behavior: "smooth",});
             }
         },
         created(){
@@ -78,33 +117,21 @@ import {store} from '../store';
 
 
 .container{
-    margin-top: -12rem;
-
+    // margin-top: -12rem;
+    section:first-of-type{
+        margin-top: -10rem;
+    }
     section{
-        margin-left: 3rem;
-        margin-top: 4rem;
+        margin-top: 3rem;
 
         h2{
-            margin-left: 18px;
-        }
-
-        .row{
-            overflow-y: hidden;
-            margin-right: 20px;
-           
-            .col{
-                // border: 1px solid red;
-                height: 250px;
-                margin: 1.5rem 0;        
-                margin-left: 10px;
-                transition: transform 450ms;
-
-            }
-            .col:hover{
-                transform: scale(1.08);
-            }
+            margin-left: 5.5rem;
+            margin-bottom: 1rem;
         }
     }
+
+    
+    
 }
  
 </style>

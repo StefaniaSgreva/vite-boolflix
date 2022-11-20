@@ -8,10 +8,10 @@ export const store = reactive({
         movie: 'search/movie',
         tv: 'search/tv'
     }, 
-    loading:{
-        movie: false,
-        tv: true,
-    },
+    // loading:{
+    //     movie: false,
+    //     tv: true,
+    // },
     params:{
         api_key: '6e5beca259c47107979aef3b3305cc9a',
         query: '',
@@ -68,4 +68,7 @@ export const store = reactive({
                 
         })
     },
+
+      
+    
     });

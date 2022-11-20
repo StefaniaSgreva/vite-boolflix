@@ -36,10 +36,10 @@ import AppSearch from './AppSearch.vue';
     components: { AppSearch },
     methods: {
       vueOnScroll() {
-        var prev = window.pageYOffset;
+        let prev = window.pageYOffset;
         const refs = this.$refs.headRef; // assign the reference in variable
         window.addEventListener("scroll", () => {
-          var curr = window.pageYOffset;
+          let curr = window.pageYOffset;
           if (prev > curr) {
             refs.classList.add("scrollDown");
             refs.classList.remove("scrolled");
@@ -118,7 +118,7 @@ import AppSearch from './AppSearch.vue';
         }
         .btn-gray{
           background-color: $btn-gray;
-          opacity: .9;
+          opacity: .8;
           color: $text-color;
         }
 
@@ -144,6 +144,7 @@ import AppSearch from './AppSearch.vue';
 
         img{
             width: 100px;
+            margin-left: 5rem;
             cursor: pointer;
         }
     }

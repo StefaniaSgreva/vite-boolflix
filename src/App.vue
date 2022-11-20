@@ -9,21 +9,24 @@
       <ItemList title="Tv Series" :items="store.Series"/>
     </div>
   </main>
+  <AppFooter/>
 </template>
 
 <script>
 import AppHeader from './components/AppHeader.vue';
 import ItemList from './components/ItemList.vue';
 import AppHome from './components/AppHome.vue';
+import AppFooter from './components/AppFooter.vue';
 // import axios from 'axios';
 import {store} from './store';
 
   export default {
       components: {
-      AppHeader,
-      ItemList,
-      AppHome
-    },
+    AppHeader,
+    ItemList,
+    AppHome,
+    AppFooter
+},
       data(){
         return{ 
           store,   

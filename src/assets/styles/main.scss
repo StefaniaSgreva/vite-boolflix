@@ -4,6 +4,8 @@ $fa-font-path: './webfonts';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import '@fortawesome/fontawesome-free/scss/brands.scss';
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
@@ -148,3 +150,19 @@ i:focus{
 //     content: \203A;
 // }
 
+//FOOTER
+ul{
+    list-style: none;
+   
+    li a{
+        text-decoration: none;
+        color: $link-gray;
+        font-size: .85rem;
+        padding-right: 5rem;
+        line-height: 2.2rem;
+        cursor: pointer;
+    }
+   li a:hover{
+    text-decoration: underline;
+   }
+}
